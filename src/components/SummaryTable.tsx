@@ -26,7 +26,12 @@ function SummaryTable() {
       <div className='grid grid-rows-7 grid-flow-col gap-3'>
         {summaryDates.map(date=>{
           return(
-            <HabitDay key={date.toString()}/>
+            <HabitDay 
+              key={date.toString()}
+              amount={5} 
+              completed={Math.round(Math.random()*5)}
+              
+              />
           )
         })}
         {/* gera o array com base na quantidade de quadrados que serão gerados  */}
