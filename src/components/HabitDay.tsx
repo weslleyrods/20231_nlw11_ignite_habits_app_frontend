@@ -7,13 +7,14 @@ import { Check } from "phosphor-react"
 
 
 type HabitDayProps = {
-  completed: number
-  amount: number
+  date: Date
+  completed?: number
+  amount?: number
 }
 
-function HabitDay({completed, amount}: HabitDayProps) {
+function HabitDay({completed = 0, amount = 0}: HabitDayProps) {
 
-  const completedPorcentage = Math.round((completed / amount) * 100)
+  const completedPorcentage = amount > 0 ? Math.round((completed / amount) * 100) : 0
   return (
 
     <Popover.Root>
@@ -24,7 +25,7 @@ function HabitDay({completed, amount}: HabitDayProps) {
           'bg-violet-800 border-violet-700': completedPorcentage >= 20 && completedPorcentage < 40,
           'bg-violet-700 border-violet-600': completedPorcentage >= 40 && completedPorcentage < 60,
           'bg-violet-600 border-violet-500': completedPorcentage >= 60 && completedPorcentage < 80,
-          'bg-violet-500 border-violet-400': completedPorcentage < 860,
+          'bg-violet-500 border-violet-400': completedPorcentage >= 80,
         })}/>
 
       <Popover.Portal>

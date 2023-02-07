@@ -23,8 +23,7 @@ function NewHabitForm() {
     console.log(title, weekDays)
   }
 
-  const handleToggleWeekDay = (weekDay: number)=>{
-    if(weekDays.includes(weekDay)){
+  const handleToggleWeekDay = (weekDay: number)=>{    if(weekDays.includes(weekDay)){
       const weekDayWithRemovedOne = weekDays.filter(day => day !== weekDay)
       setWeekDays(weekDayWithRemovedOne)
     }else{
