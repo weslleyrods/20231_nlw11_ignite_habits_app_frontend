@@ -1,5 +1,5 @@
 
-
+import './lib/dayjs'
 import Header from './components/Header'
 import Summary from './components/SummaryTable'
 
